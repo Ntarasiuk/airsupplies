@@ -1,7 +1,11 @@
-import '../styles/globals.css'
+import { CssBaseline, GeistProvider } from "@geist-ui/react";
+import "inter-ui/inter.css";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const Application = ({ Component, pageProps }) => (
+  <GeistProvider>
+    <CssBaseline />
+    <Component {...pageProps} />{" "}
+  </GeistProvider>
+);
 
-export default MyApp
+export default Application;
