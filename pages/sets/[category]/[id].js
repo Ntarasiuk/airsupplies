@@ -1,43 +1,91 @@
-import { gql } from "graphql-request";
+import { useQuery } from "@apollo/client";
+import { Breadcrumbs, Display, Grid, Image, Link } from "@geist-ui/react";
+import ProductCard from "components/ProductCard";
+import gql from "graphql-tag";
 import { useRouter } from "next/dist/client/router";
+import NextLink from "next/link";
 import React from "react";
-import useSWR from "swr";
 import Layout from "../../../components/Layout";
-import { fetcher } from "../../../utils/swr";
 
 function SetPage() {
   const { query } = useRouter();
-  console.log(query);
 
   const set = gql`
     query set($id: Int!) {
-      set(where: { id: { _eq: $id } }) {
+      set_by_pk(id: $id) {
+        description
+        subtitle
+        title
+        cover_image
         category {
           description
           name
         }
         products {
+          url
+          photo_url
+          id
           asin
           description
-          name
-          url
+          title
+          subtitle
         }
       }
     }
   `;
-  const { data, error } = useSWR(
-    {
-      query: set,
-      variables: {
-        id: query.id,
-      },
+
+  const { data, error, loading } = useQuery(set, {
+    variables: {
+      id: query?.id,
     },
+  });
 
-    fetcher
+  const setData = data?.set_by_pk;
+
+  return (
+    <Layout>
+      <div style={{ padding: "32px 0" }} />
+      {loading ? (
+        "loading..."
+      ) : (
+        <>
+          <Breadcrumbs>
+            <NextLink href="/">
+              <Breadcrumbs.Item>
+                <Link>Home</Link>
+              </Breadcrumbs.Item>
+            </NextLink>
+            <NextLink href="/sets">
+              <Breadcrumbs.Item>
+                <Link>Sets</Link>
+              </Breadcrumbs.Item>
+            </NextLink>
+            <Breadcrumbs.Item>{setData?.category?.name}</Breadcrumbs.Item>
+          </Breadcrumbs>
+
+          <h2>{setData?.title}</h2>
+          <Display shadow caption={<p>{setData?.subtitle}</p>}>
+            <Image src={setData?.cover_image} alt="cover photo" />
+          </Display>
+          <div style={{ padding: "2rem 0" }}>
+            <Grid.Container gap={2}>
+              {setData?.products?.map((product) => (
+                <Grid xs={6} key={product?.id}>
+                  <ProductCard
+                    image={product?.photo_url}
+                    url={product?.url}
+                    // description={product?.description}
+                    title={product?.title}
+                    subtitle={product?.subtitle}
+                  />
+                </Grid>
+              ))}
+            </Grid.Container>
+          </div>
+        </>
+      )}
+    </Layout>
   );
-
-  console.log(data, error);
-  return <Layout>SET PAGE</Layout>;
 }
 
 export default SetPage;
