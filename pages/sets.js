@@ -41,7 +41,7 @@ function SetPage() {
               btnText="Check out the list"
               stars={5}
               link={`/sets/${set?.category.slug}/${set?.id}`}
-              showStars
+              showStars={false}
               badge={
                 set?.is_airbnb_plus ? (
                   <>

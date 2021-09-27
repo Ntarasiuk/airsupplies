@@ -1,4 +1,12 @@
-import { Card, Grid, Image, Link, Rating, Text } from "@geist-ui/react";
+import {
+  Card,
+  Grid,
+  Image,
+  Link,
+  Rating,
+  Text,
+  useMediaQuery,
+} from "@geist-ui/react";
 import NextLink from "next/link";
 import React from "react";
 function SetCard({
@@ -13,15 +21,22 @@ function SetCard({
   showStars,
   badge,
 }) {
+  const isXS = useMediaQuery("xs");
+  const isSM = useMediaQuery("sm");
+
   return (
     <NextLink target="_blank" href={link}>
       <Link>
-        <Card width={width}>
+        <Card
+          style={{ maxWidth: width }}
+          width={isXS || isSM ? "calc(100% - 16px)" : width}
+        >
           <Image
             src={image}
             height={height}
             alt="thing"
-            width={width}
+            width={isXS || isSM ? 350 : width}
+            style={{ maxWidth: width }}
             draggable={false}
           />
           <Grid.Container gap={2}>

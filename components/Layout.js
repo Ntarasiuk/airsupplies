@@ -1,9 +1,17 @@
-import { Grid, Page } from "@geist-ui/react";
+import { Grid, Page, useMediaQuery } from "@geist-ui/react";
 import React from "react";
 
 function Layout({ children }) {
+  const isXS = useMediaQuery("xs");
+  const isSM = useMediaQuery("sm");
   return (
-    <Page>
+    <Page
+      style={
+        isXS || isSM
+          ? { padding: 10, margin: 10, width: "calc(100% - 16px" }
+          : null
+      }
+    >
       <Page.Header>
         <Grid.Container gap={2} justify="center">
           <Grid md={12} xs>
@@ -18,7 +26,7 @@ function Layout({ children }) {
             }}
           >
             <div>
-              <a href="mailto:ntarasiuk@gmail.com">
+              <a style={{ color: "black" }} href="mailto:ntarasiuk@gmail.com">
                 <h2>Email</h2>
               </a>
             </div>

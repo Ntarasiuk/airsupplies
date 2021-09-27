@@ -1,4 +1,4 @@
-import { Card, Image, Link, Text } from "@geist-ui/react";
+import { Card, Image, Link, Text, useMediaQuery } from "@geist-ui/react";
 import React from "react";
 
 function ProductCard({
@@ -10,13 +10,16 @@ function ProductCard({
   title,
   subtitle,
 }) {
+  const isXS = useMediaQuery("xs");
+  const isSM = useMediaQuery("sm");
+
   return (
-    <Card width="400px">
+    <Card width={isXS || isSM ? "calc(100% - 8px)" : width}>
       <Image
         src={image}
         height={height}
         alt={title}
-        width={width}
+        width={isXS || isSM ? 350 : width}
         draggable={false}
       />
       <Text h4 mb={0}>
