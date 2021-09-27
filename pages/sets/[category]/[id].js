@@ -65,7 +65,11 @@ function SetPage() {
 
           <h2>{setData?.title}</h2>
           <Display shadow caption={<p>{setData?.subtitle}</p>}>
-            <Image src={setData?.cover_image} alt="cover photo" />
+            <Image
+              src={setData?.cover_image}
+              style={{ maxHeight: 800 }}
+              alt="cover photo"
+            />
           </Display>
           <div style={{ padding: "2rem 0" }}>
             <Grid.Container gap={2}>
