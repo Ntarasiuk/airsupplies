@@ -30,7 +30,7 @@ function ProductCard({
       </Text>
       <Card.Footer>
         <Link block target="_blank" href={url}>
-          Add to cart
+          Details
         </Link>
       </Card.Footer>
     </Card>

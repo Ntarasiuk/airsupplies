@@ -1,5 +1,13 @@
 import { useQuery } from "@apollo/client";
-import { Breadcrumbs, Display, Grid, Image, Link } from "@geist-ui/react";
+import {
+  Breadcrumbs,
+  Button,
+  Display,
+  Grid,
+  Image,
+  Link,
+  Loading,
+} from "@geist-ui/react";
 import ProductCard from "components/ProductCard";
 import gql from "graphql-tag";
 import { useRouter } from "next/dist/client/router";
@@ -46,7 +54,7 @@ function SetPage() {
     <Layout>
       <div style={{ padding: "32px 0" }} />
       {loading ? (
-        "loading..."
+        <Loading>Loading</Loading>
       ) : (
         <>
           <Breadcrumbs>
@@ -74,7 +82,7 @@ function SetPage() {
           <div style={{ padding: "2rem 0" }}>
             <Grid.Container gap={2}>
               {setData?.products?.map((product) => (
-                <Grid xs={6} key={product?.id}>
+                <Grid xs={24} md={12} lg={8} xl={6} key={product?.id}>
                   <ProductCard
                     image={product?.photo_url}
                     url={product?.url}
@@ -84,6 +92,11 @@ function SetPage() {
                   />
                 </Grid>
               ))}
+              <Grid xs={24}>
+                <Button width="100%" shadow type="secondary">
+                  Finalize List
+                </Button>
+              </Grid>
             </Grid.Container>
           </div>
         </>

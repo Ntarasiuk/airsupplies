@@ -39,7 +39,7 @@ function SetCard({
             {title}
           </Text>
           <Text type="secondary" small>
-            {content}{" "}
+            {content}
           </Text>
           <Card.Footer>
             <Link block>{btnText} </Link>

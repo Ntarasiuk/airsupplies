@@ -18,15 +18,15 @@ function Layout({ children }) {
             }}
           >
             <div>
-              <h2>Email</h2>
+              <a href="mailto:ntarasiuk@gmail.com">
+                <h2>Email</h2>
+              </a>
             </div>
           </Grid>
         </Grid.Container>
       </Page.Header>
       <Page.Content>{children}</Page.Content>
-      <Page.Footer>
-        <h2>Footer</h2>
-      </Page.Footer>
+      <Page.Footer>{/* <h2>Contact</h2>  */}</Page.Footer>
     </Page>
   );
 }
