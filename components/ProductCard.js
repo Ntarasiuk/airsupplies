@@ -26,7 +26,7 @@ function ProductCard({
         ) : null}
       </Text>
       <Card.Footer>
-        <Link block target="_blank" href={url}>
+        <Link block target="_blank" href={`${url}?tag=airsupplies-20`}>
           Details
         </Link>
       </Card.Footer>
