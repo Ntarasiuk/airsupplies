@@ -24,10 +24,12 @@ function Layout({ children }) {
                 justifyContent: "end",
               }}
             >
-              <div>
-                <a style={{ color: "black" }} href="mailto:ntarasiuk@gmail.com">
-                  <h2>Email</h2>
-                </a>
+              <div style={{ textAlign: "right" }}>
+                <Link href="/blog" passHref>
+                  <a style={{ color: "black" }}>
+                    <h2>Blog</h2>
+                  </a>
+                </Link>
               </div>
             </Grid>
           </Grid.Container>

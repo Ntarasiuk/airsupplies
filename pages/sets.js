@@ -1,9 +1,9 @@
 import { useQuery } from "@apollo/client";
 import { Badge, Grid, Loading, Spacer, useTheme } from "@geist-ui/react";
+import Layout from "components/Layout";
+import SetCard from "components/SetCard";
 import gql from "graphql-tag";
 import React from "react";
-import Layout from "../components/Layout";
-import SetCard from "../components/SetCard";
 
 function SetPage() {
   const theme = useTheme();
