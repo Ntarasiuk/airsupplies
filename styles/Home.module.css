@@ -12,3 +12,7 @@
     font-size: 2rem;
   }
 }
+
+.table > thead {
+    display: none;
+}

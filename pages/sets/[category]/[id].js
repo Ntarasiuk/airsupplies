@@ -8,12 +8,12 @@ import {
   Link,
   Loading,
 } from "@geist-ui/react";
+import Layout from "components/Layout";
 import ProductCard from "components/ProductCard";
 import gql from "graphql-tag";
 import { useRouter } from "next/dist/client/router";
 import NextLink from "next/link";
 import React from "react";
-import Layout from "../../../components/Layout";
 
 function SetPage() {
   const { query } = useRouter();
@@ -21,11 +21,13 @@ function SetPage() {
   const set = gql`
     query set($id: Int!) {
       set_by_pk(id: $id) {
+        id
         description
         subtitle
         title
         cover_image
         category {
+          slug
           description
           name
         }
@@ -102,19 +104,23 @@ function SetPage() {
                 width: "calc(100vw - 10%)",
               }}
             >
-              <Button
-                style={{
-                  bottom: 25,
-                  maxWidth: 500,
-                  width: 500,
-                  height: 50,
-                }}
-                ghost
-                type="secondary"
-                shadow
+              <Link
+                href={`/sets/${setData?.category?.slug}/finalize/${query?.id}`}
               >
-                Finalize List
-              </Button>
+                <Button
+                  style={{
+                    bottom: 25,
+                    maxWidth: 500,
+                    width: 500,
+                    height: 50,
+                  }}
+                  ghost
+                  type="secondary"
+                  shadow
+                >
+                  Finalize List
+                </Button>
+              </Link>
             </div>
           </div>
         </>
