@@ -23,7 +23,7 @@ export default function Home() {
             </span>{" "}
             or{" "}
             <img
-              src="https://csvcus.homeaway.com/rsrcs/cdn-logos/5.8.0/sitename/vrbo/web/logo.svg"
+              src="/vrbo.svg"
               width="80px"
               alt="vrbo logo"
               title="Vrbo logo"
