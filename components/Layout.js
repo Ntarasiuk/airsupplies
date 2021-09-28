@@ -12,7 +12,7 @@ function Layout({ children }) {
             <Grid md={12} xs>
               <Link href="/" passHref>
                 <a style={{ color: "black", textDecoration: "none" }}>
-                  <h2>☁ AirSupplies</h2>
+                  <h2> AirBundles 📦</h2>
                 </a>
               </Link>
             </Grid>

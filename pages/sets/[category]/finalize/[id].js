@@ -170,7 +170,7 @@ function SetPage() {
               }}
             >
               <Link
-                href={`https://www.amazon.com/gp/aws/cart/add.html?${amazonLink}&AssociateTag=airsupplies-20`}
+                href={`https://www.amazon.com/gp/aws/cart/add.html?${amazonLink}&AssociateTag=airbundles-20`}
               >
                 <Button
                   style={{
