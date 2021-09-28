@@ -26,19 +26,9 @@ function SetCard({
 
   return (
     <NextLink target="_blank" href={link}>
-      <Link>
-        <Card
-          style={{ maxWidth: width }}
-          width={isXS || isSM ? "calc(100% - 16px)" : width}
-        >
-          <Image
-            src={image}
-            height={height}
-            alt="thing"
-            width={isXS || isSM ? 350 : width}
-            style={{ maxWidth: width }}
-            draggable={false}
-          />
+      <Link style={{ width: "100%" }}>
+        <Card width="100%">
+          <Image src={image} height={height} alt="thing" draggable={false} />
           <Grid.Container gap={2}>
             <Grid md={12} xs>
               {showStars ? (

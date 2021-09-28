@@ -52,7 +52,6 @@ function SetPage() {
 
   return (
     <Layout>
-      <div style={{ padding: "32px 0" }} />
       {loading ? (
         <Loading>Loading</Loading>
       ) : (
@@ -79,7 +78,7 @@ function SetPage() {
               alt="cover photo"
             />
           </Display>
-          <div style={{ padding: "2rem 0" }}>
+          <div style={{ padding: "2rem 0", marginBottom: 30 }}>
             <Grid.Container gap={2}>
               {setData?.products?.map((product) => (
                 <Grid xs={24} md={12} lg={8} xl={6} key={product?.id}>
@@ -92,12 +91,31 @@ function SetPage() {
                   />
                 </Grid>
               ))}
-              <Grid xs={24}>
-                <Button width="100%" shadow type="secondary">
-                  Finalize List
-                </Button>
-              </Grid>
+              <Grid xs={24}></Grid>
             </Grid.Container>
+            <div
+              style={{
+                display: "flex",
+                position: "fixed",
+                bottom: 24,
+                justifyContent: "center",
+                width: "calc(100vw - 10%)",
+              }}
+            >
+              <Button
+                style={{
+                  bottom: 25,
+                  maxWidth: 500,
+                  width: 500,
+                  height: 50,
+                }}
+                ghost
+                type="secondary"
+                shadow
+              >
+                Finalize List
+              </Button>
+            </div>
           </div>
         </>
       )}

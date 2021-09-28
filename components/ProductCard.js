@@ -14,14 +14,8 @@ function ProductCard({
   const isSM = useMediaQuery("sm");
 
   return (
-    <Card width={isXS || isSM ? "calc(100% - 8px)" : width}>
-      <Image
-        src={image}
-        height={height}
-        alt={title}
-        width={isXS || isSM ? 350 : width}
-        draggable={false}
-      />
+    <Card width="100%">
+      <Image src={image} height={height} alt={title} draggable={false} />
       <Text h4 mb={0}>
         {title}
       </Text>

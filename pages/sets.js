@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import { Badge, Grid, Spacer, useTheme } from "@geist-ui/react";
+import { Badge, Grid, Loading, Spacer, useTheme } from "@geist-ui/react";
 import gql from "graphql-tag";
 import React from "react";
 import Layout from "../components/Layout";
@@ -27,13 +27,19 @@ function SetPage() {
   `);
 
   const setData = data?.set || [];
+  if (loading)
+    return (
+      <Layout>
+        <Loading>Loading</Loading>
+      </Layout>
+    );
   return (
     <Layout>
       <h4>Bathroom Supplies</h4>
       <hr />
       <Grid.Container gap={2}>
         {setData?.map((set) => (
-          <Grid md={12} xs key={set?.id}>
+          <Grid xs={24} md={12} lg={8} xl={6} key={set?.id}>
             <SetCard
               image={set?.cover_image}
               title={set?.title}
