@@ -112,26 +112,12 @@ function SetPage() {
       </>
     );
   };
-  const renderAddAction = (value, rowData, index) => {
-    const removeHandler = () => {
-      setTableData((last) =>
-        last.filter((_, dataIndex) => dataIndex !== index)
-      );
-    };
-    return (
-      <>
-        <Button type="error" auto scale={1 / 3} onClick={removeHandler}>
-          Remove
-        </Button>
-      </>
-    );
-  };
 
   const amazonLink = tableData
     .map(
       (e, index) =>
         `ASIN.${index + 1}=${e?.product?.asin}&Quantity.${index + 1}=${
-          e?.quantity || 1
+          e?.quantity
         }&`
     )
     ?.join("");
@@ -171,12 +157,6 @@ function SetPage() {
                 label="operation"
                 width={150}
                 render={renderAction}
-              />
-              <Table.Column
-                prop="add"
-                label="add"
-                width={150}
-                render={renderAddAction}
               />
             </Table>
 
