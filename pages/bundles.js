@@ -8,9 +8,10 @@ import {
   Text,
   useTheme,
 } from "@geist-ui/react";
+import BundleCard from "components/BundleCard";
 import Layout from "components/Layout";
-import SetCard from "components/SetCard";
 import gql from "graphql-tag";
+import Head from "next/head";
 import React from "react";
 
 function SetPage() {
@@ -44,7 +45,7 @@ function SetPage() {
   return (
     <Layout>
       <Text h3 type="secondary">
-        Sets
+        Bundles
       </Text>
       {catData?.map((cat, index) => (
         <div key={cat?.id} style={{ marginBottom: 40 }}>
@@ -56,13 +57,13 @@ function SetPage() {
           <Grid.Container gap={5}>
             {[...cat?.sets]?.map((set) => (
               <Grid xs={24} md={12} lg={8} xl={6} key={set?.id}>
-                <SetCard
+                <BundleCard
                   image={set?.cover_image}
                   title={set?.title}
                   content={set?.subtitle}
                   btnText="Check out the list"
                   stars={5}
-                  link={`/sets/${cat?.slug}/${set?.id}`}
+                  link={`/bundles/${cat?.slug}/${set?.id}`}
                   showStars={false}
                   badge={
                     set?.is_airbnb_plus ? (
@@ -84,4 +85,19 @@ function SetPage() {
   );
 }
 
-export default SetPage;
+const bundles = () => (
+  <>
+    <Head>
+      <title>Choose a Bundle | AirBundles</title>
+      <meta
+        property="og:description"
+        content="Hand picked bundles made for your every hosting need"
+      />
+      <meta property="og:site_name" content="AirBundles" />
+      <meta property="og:url" content="https://airbundles.com/bundles" />
+      <meta property="og:image" content="https://airbundles.com/og_image.jpg" />
+    </Head>
+    <SetPage />
+  </>
+);
+export default bundles;

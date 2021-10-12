@@ -134,7 +134,7 @@ function SetPage() {
                 <Link>Home</Link>
               </Breadcrumbs.Item>
             </NextLink>
-            <NextLink href="/sets">
+            <NextLink href="/bundles">
               <Breadcrumbs.Item>
                 <Link>Sets</Link>
               </Breadcrumbs.Item>

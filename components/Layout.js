@@ -10,7 +10,7 @@ function Layout({ children }) {
         <Page.Header>
           <Grid.Container gap={2} justify="space-between">
             <Grid xs={12}>
-              <Link href="/sets" passHref>
+              <Link href="/bundles" passHref>
                 <a style={{ color: "black", textDecoration: "none" }}>
                   <h2>AirBundles</h2>
                 </a>
