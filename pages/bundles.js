@@ -91,7 +91,7 @@ const bundles = () => (
       <title>Choose a Bundle | AirBundles</title>
       <meta
         property="og:description"
-        content="Hand picked bundles made for your every hosting need"
+        content="Bundles of amazing products for your every hosting need"
       />
       <meta property="og:site_name" content="AirBundles" />
       <meta property="og:url" content="https://airbundles.com/bundles" />

@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Hosting Supplies for AirBnb, VRBO | AirBundles</title>
+        <title>Hosting Supplies for Airbnb, VRBO | AirBundles</title>
         <meta
           name="description"
           content="Hosting isn't easy. Find the best hosting products and get expert advice."
@@ -15,7 +15,9 @@ export default function Home() {
         />
         <meta
           property="og:description"
-          content="Find the best products for your hosting home"
+          content="Finding the right things for your rented space is a struggle. We
+              are making it easy to find what best tried and
+              true products"
         />
         <meta property="og:site_name" content="AirBundles" />
         <meta property="og:url" content="https://airbundles.com/" />
@@ -50,8 +52,7 @@ export default function Home() {
                 title="Vrbo logo"
               />
               , finding the right things for your rented space is a struggle. We
-              are making it easy to find what best suites you with tried and
-              true
+              are making it easy to find what best tried and true
               <Text b> products</Text>
             </Text>
           </div>
