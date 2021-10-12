@@ -33,6 +33,7 @@ function SetPage() {
         }
         products {
           url
+          cover_image
           photo_url
           id
           asin
@@ -85,7 +86,7 @@ function SetPage() {
               {setData?.products?.map((product) => (
                 <Grid xs={24} md={12} lg={8} xl={6} key={product?.id}>
                   <ProductCard
-                    image={product?.photo_url}
+                    image={product?.cover_image || product?.photo_url}
                     url={product?.url}
                     // description={product?.description}
                     title={product?.title}

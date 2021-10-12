@@ -8,7 +8,7 @@ function Layout({ children }) {
     <div>
       <Page className={styles.page}>
         <Page.Header>
-          <Grid.Container gap={2} justify="center">
+          <Grid.Container gap={2}>
             <Grid md={12} xs>
               <Link href="/" passHref>
                 <a style={{ color: "black", textDecoration: "none" }}>
