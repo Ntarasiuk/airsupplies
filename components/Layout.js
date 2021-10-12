@@ -23,7 +23,7 @@ function Layout({ children }) {
                 justifyContent: "end",
               }}
             >
-              <div>
+              <div style={{ width: "100%", textAlign: "right" }}>
                 <Link href="/blog" passHref>
                   <a
                     style={{
