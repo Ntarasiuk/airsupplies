@@ -1,5 +1,12 @@
 import { useQuery } from "@apollo/client";
-import { Badge, Grid, Loading, Spacer, useTheme } from "@geist-ui/react";
+import {
+  Badge,
+  Divider,
+  Grid,
+  Loading,
+  Spacer,
+  useTheme,
+} from "@geist-ui/react";
 import Layout from "components/Layout";
 import SetCard from "components/SetCard";
 import gql from "graphql-tag";
@@ -10,7 +17,7 @@ function SetPage() {
 
   const { data, loading, error } = useQuery(gql`
     {
-      category {
+      category(order_by: { name: asc_nulls_last }) {
         slug
         description
         name
@@ -35,11 +42,15 @@ function SetPage() {
     );
   return (
     <Layout>
+      <h2>Sets</h2>
       {catData?.map((cat) => (
-        <div key={cat?.id}>
-          {cat?.name ? <h4>{cat.name} Supplies</h4> : null}
-          <hr />
-          <Grid.Container gap={2}>
+        <div key={cat?.id} style={{ marginBottom: 40 }}>
+          {cat?.name ? (
+            <Divider mt={12} mb={12}>
+              <h3 style={{ marginBottom: 0 }}>{cat.name}</h3>
+            </Divider>
+          ) : null}
+          <Grid.Container gap={5}>
             {[...cat?.sets]?.map((set) => (
               <Grid xs={24} md={12} lg={8} xl={6} key={set?.id}>
                 <SetCard

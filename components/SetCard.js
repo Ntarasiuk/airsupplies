@@ -27,7 +27,7 @@ function SetCard({
   return (
     <NextLink target="_blank" href={link}>
       <Link style={{ width: "100%" }}>
-        <Card width="100%">
+        <Card width="100%" shadow>
           <Image src={image} height={height} alt="thing" draggable={false} />
           <Grid.Container gap={2}>
             <Grid md={12} xs>
