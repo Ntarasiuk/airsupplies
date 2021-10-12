@@ -5,6 +5,7 @@ import {
   Grid,
   Loading,
   Spacer,
+  Text,
   useTheme,
 } from "@geist-ui/react";
 import Layout from "components/Layout";
@@ -42,11 +43,13 @@ function SetPage() {
     );
   return (
     <Layout>
-      <h2>Sets</h2>
-      {catData?.map((cat) => (
+      <Text h3 type="secondary">
+        Sets
+      </Text>
+      {catData?.map((cat, index) => (
         <div key={cat?.id} style={{ marginBottom: 40 }}>
           {cat?.name ? (
-            <Divider mt={12} mb={12}>
+            <Divider mt={index === 0 ? 4 : 12} mb={12}>
               <h3 style={{ marginBottom: 0 }}>{cat.name}</h3>
             </Divider>
           ) : null}
