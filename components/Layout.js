@@ -8,25 +8,28 @@ function Layout({ children }) {
     <div>
       <Page className={styles.page}>
         <Page.Header>
-          <Grid.Container gap={2}>
-            <Grid md={12} xs>
-              <Link href="/" passHref>
+          <Grid.Container gap={2} justify="space-between">
+            <Grid xs={12}>
+              <Link href="/sets" passHref>
                 <a style={{ color: "black", textDecoration: "none" }}>
                   <h2>AirBundles</h2>
                 </a>
               </Link>
             </Grid>
             <Grid
-              md={12}
-              xs
-              width="100%"
+              xs={12}
               style={{
+                display: "flex",
                 justifyContent: "end",
               }}
             >
-              <div style={{ textAlign: "right" }}>
+              <div>
                 <Link href="/blog" passHref>
-                  <a style={{ color: "black" }}>
+                  <a
+                    style={{
+                      color: "black",
+                    }}
+                  >
                     <h2>Blog</h2>
                   </a>
                 </Link>
