@@ -26,6 +26,7 @@ function SetPage() {
         sets {
           id
           cover_image
+          object_position
           description
           subtitle
           title
@@ -63,6 +64,7 @@ function SetPage() {
                   content={set?.subtitle}
                   btnText="Check out the list"
                   stars={5}
+                  objectPosition={set?.object_position}
                   link={`/bundles/${cat?.slug}/${set?.id}`}
                   showStars={false}
                   badge={

@@ -4,6 +4,7 @@ import React from "react";
 const BundleCard = ({
   width = "400px",
   height = "200px",
+  objectPosition = "center",
   image,
   link,
   title,
@@ -16,7 +17,13 @@ const BundleCard = ({
   <NextLink target="_blank" href={link}>
     <Link style={{ width: "100%" }}>
       <Card width="100%" shadow>
-        <Image src={image} height={height} alt="thing" draggable={false} />
+        <Image
+          style={{ objectFit: "cover", objectPosition }}
+          src={image}
+          height={height}
+          alt={title}
+          draggable={false}
+        />
         <Grid.Container gap={2}>
           <Grid md={12} xs>
             {showStars ? <Rating value={stars} locked type="warning" /> : null}
