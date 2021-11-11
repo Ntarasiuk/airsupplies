@@ -61,6 +61,21 @@ export default function Home() {
             </Button>
           </Link>
         </div>
+        <div style={{ marginTop: 60, textAlign: "center" }}>
+          <a
+            href="https://www.producthunt.com/posts/airbundles?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-airbundles"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=319272&theme=light"
+              alt="Airbundles - Everything you need in your vacation home | Product Hunt"
+              style={{ width: 250, height: 54 }}
+              width="250"
+              height="54"
+            />
+          </a>
+        </div>
       </Layout>
       <style jsx global>{`
         .cover-image {

@@ -39,13 +39,11 @@ function Layout({ children, showFooter = false }) {
         </Page.Header>
         <Page.Content>{children}</Page.Content>
         <Page.Footer>
-          {
-            showFooter ? (
-              <Text p>
-                As an Amazon Associate, I may earn from qualifying purchases
-              </Text>
-            ) : null /* <h2>Contact</h2>  */
-          }
+          {showFooter ? (
+            <Text p>
+              As an Amazon Associate, I may earn from qualifying purchases
+            </Text>
+          ) : null}
         </Page.Footer>
       </Page>
     </div>
