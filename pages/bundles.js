@@ -63,7 +63,7 @@ function SetPage() {
                   image={set?.cover_image}
                   title={set?.title}
                   content={set?.subtitle}
-                  btnText="Check out the list"
+                  btnText="View list"
                   stars={5}
                   objectPosition={set?.object_position}
                   link={`/bundles/${cat?.slug}/${set?.id}`}

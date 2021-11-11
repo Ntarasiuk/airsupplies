@@ -10,6 +10,7 @@ import {
 } from "@geist-ui/react";
 import Layout from "components/Layout";
 import ProductCard from "components/ProductCard";
+import Suggestions from "components/Suggestions";
 import gql from "graphql-tag";
 import { useRouter } from "next/dist/client/router";
 import Head from "next/head";
@@ -143,6 +144,7 @@ function SetPage() {
             </div>
           </>
         )}
+        <Suggestions />
       </Layout>
     </>
   );

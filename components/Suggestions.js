@@ -5,11 +5,7 @@ function Suggestions() {
   return (
     <Text h3>
       Have suggestions?{" "}
-      <Link
-        href="mailto:suggest@airbundles.com?subject=I%20have%20a%20suggestion%20for%20you!"
-        color
-        underline
-      >
+      <Link href="mailto:suggest@airbundles.com" color underline>
         Send them here.
       </Link>
     </Text>
