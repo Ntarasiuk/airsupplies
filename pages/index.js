@@ -1,5 +1,6 @@
-import { Button, Display, Image, Text } from "@geist-ui/react";
+import { Button, Text } from "@geist-ui/react";
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import Layout from "../components/Layout";
 
@@ -36,14 +37,15 @@ export default function Home() {
           }}
         >
           <Link href="/bundles" passHref>
-            <Display shadow style={{ cursor: "pointer" }}>
+            <div>
               <Image
-                width="800px"
                 height="600px"
+                width="800px"
                 src="/og_image.jpg"
+                className="cover-image"
                 alt="Airbundles logo"
               />
-            </Display>
+            </div>
           </Link>
           <h1>Hosting isn&apos;t easy</h1>
           <div style={{ maxWidth: 600 }}>
@@ -60,6 +62,12 @@ export default function Home() {
           </Link>
         </div>
       </Layout>
+      <style jsx global>{`
+        .cover-image {
+          cursor: pointer;
+          border-radius: 4px;
+        }
+      `}</style>
     </>
   );
 }
