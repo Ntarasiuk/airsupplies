@@ -1,9 +1,9 @@
-import { Grid, Page } from "@geist-ui/react";
+import { Grid, Page, Text } from "@geist-ui/react";
 import Link from "next/link";
 import React from "react";
 import styles from "styles/Home.module.css";
 
-function Layout({ children }) {
+function Layout({ children, showFooter = false }) {
   return (
     <div>
       <Page className={styles.page}>
@@ -38,7 +38,15 @@ function Layout({ children }) {
           </Grid.Container>
         </Page.Header>
         <Page.Content>{children}</Page.Content>
-        <Page.Footer>{/* <h2>Contact</h2>  */}</Page.Footer>
+        <Page.Footer>
+          {
+            showFooter ? (
+              <Text p>
+                As an Amazon Associate, I may earn from qualifying purchases
+              </Text>
+            ) : null /* <h2>Contact</h2>  */
+          }
+        </Page.Footer>
       </Page>
     </div>
   );

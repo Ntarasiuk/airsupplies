@@ -72,7 +72,7 @@ function SetPage() {
           }
         />
       </Head>
-      <Layout>
+      <Layout showFooter>
         {loading ? (
           <Loading>Loading</Loading>
         ) : (

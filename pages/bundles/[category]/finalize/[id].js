@@ -123,7 +123,7 @@ function SetPage() {
     ?.join("");
 
   return (
-    <Layout>
+    <Layout showFooter>
       {loading ? (
         <Loading>Loading</Loading>
       ) : (
