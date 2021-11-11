@@ -1,5 +1,6 @@
 import { Divider, Text } from "@geist-ui/react";
 import Layout from "components/Layout";
+import Suggestions from "components/Suggestions";
 import Head from "next/head";
 
 const BlogPage = () => (
@@ -15,6 +16,8 @@ const BlogPage = () => (
       <meta property="og:image" content="https://airbundles.com/og_image.jpg" />
     </Head>
     <Layout>
+      <Suggestions />
+
       <Text h2> What are &quot;Essentials Amenities&quot;?</Text>
       <Divider />
       <Text p>

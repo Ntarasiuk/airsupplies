@@ -10,6 +10,7 @@ import {
 } from "@geist-ui/react";
 import BundleCard from "components/BundleCard";
 import Layout from "components/Layout";
+import Suggestions from "components/Suggestions";
 import gql from "graphql-tag";
 import Head from "next/head";
 import React from "react";
@@ -83,6 +84,7 @@ function SetPage() {
           </Grid.Container>
         </div>
       ))}
+      <Suggestions />
     </Layout>
   );
 }
