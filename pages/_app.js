@@ -20,6 +20,16 @@ const Application = ({ Component, pageProps }) => (
         gtag('config', 'G-9QPVDZHCDT');
   `}
     </Script>
+    <Script strategy="lazyOnload" id="gtag-config">
+      {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9QPVDZHCDT');
+        gtag('config', 'AW-10819985612');
+
+  `}
+    </Script>
     <ApolloProvider client={client}>
       <GeistProvider>
         <CssBaseline />
